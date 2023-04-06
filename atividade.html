@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+<style>
+    body
+    {
+        width: 100vw;
+        height: 100vh;
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-items: center;
+        justify-content: center;
+    }
+    .boneco
+    {
+        position: absolute;
+        width: 80px;
+        left: 570px;
+        top: 440px;
+    }
+    .texto_rio
+    {
+        position: absolute;
+        width: 320px;
+        height: 100px;
+        left: 10px;
+        top: 10px;
+        padding: 10px;
+        background-color: rgb(248, 203, 0);
+        display: none;
+    }
+    .texto_santa
+    {
+        position: absolute;
+        width: 320px;
+        height: 110px;
+        left: 10px;
+        top: 10px;
+        padding: 10px;
+        background-color: rgb(0, 192, 80);
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <div class="texto_rio" id="texto_rio"> O Rio Grande do Sul é uma das 27 unidades federativas do Brasil. 
+        Está situado na Região Sul e tem por limites o estado de Santa Catarina ao norte, 
+        Argentina ao oeste e Uruguai ao sul, além do Oceano Atlântico ao leste. </div>
+
+    <div class="texto_santa" id="texto_santa"> Santa Catarina é uma das 27 unidades federativas do Brasil. 
+        Está situada no centro da região Sul do país. Possui como limites: 
+        ao norte, com o Paraná, ao sul, com o Rio Grande do Sul. A leste, com
+         o Oceano Atlântico e a oeste, com a província argentina de Misiones. </div>
+
+    <map name="meu_mapa">
+        <area onmouseover="aparecer('Rio');" onmouseleave="esconder();" shape="circle" coords="260,440,20" href="https://pt.wikipedia.org/wiki/Rio_Grande_do_Sul" target="_blank">
+        <area onmouseover="aparecer('SC');" onmouseleave="esconder();" shape="circle" coords="297,413,20" href="https://pt.wikipedia.org/wiki/Santa_Catarina" target="_blank">
+        <area shape="circle" coords="280,376,20" href="https://pt.wikipedia.org/wiki/Paran%C3%A1" target="_blank">
+        <area shape="circle" coords="310,350,20" href="https://pt.wikipedia.org/wiki/S%C3%A3o_Paulo" target="_blank">
+        <area shape="circle" coords="240,325,20" href="https://pt.wikipedia.org/wiki/Mato_Grosso_do_Sul" target="_blank">
+        <area shape="circle" coords="360,310,20" href="https://pt.wikipedia.org/wiki/Minas_Gerais" target="_blank">
+        <area shape="circle" coords="385,355,20" href="https://pt.wikipedia.org/wiki/Rio_de_Janeiro" target="_blank">
+        <area shape="circle" coords="300,270,20" href="https://pt.wikipedia.org/wiki/Goi%C3%A2nia" target="_blank">
+        <area shape="circle" coords="230,230,20" href="https://pt.wikipedia.org/wiki/Mato_Grosso" target="_blank">
+        <area shape="circle" coords="140,210,20" href="https://pt.wikipedia.org/wiki/Rond%C3%B4nia" target="_blank">
+        <area shape="circle" coords="320,200,20" href="https://pt.wikipedia.org/wiki/Tocantins" target="_blank">
+        <area shape="circle" coords="45,185,20" href="https://pt.wikipedia.org/wiki/Acre" target="_blank">
+        <area shape="circle" coords="400,225,20" href="https://pt.wikipedia.org/wiki/Bahia" target="_blank">
+        <area shape="circle" coords="120,120,20" href="https://pt.wikipedia.org/wiki/Amazonas" target="_blank">
+        <area shape="circle" coords="280,50,20" href="https://pt.wikipedia.org/wiki/Roraima" target="_blank">
+        <area shape="circle" coords="160,45,20" href="https://pt.wikipedia.org/wiki/Amap%C3%A1" target="_blank">
+        <area shape="circle" coords="360,135,20" href="https://pt.wikipedia.org/wiki/Maranh%C3%A3o" target="_blank">
+        <area shape="circle" coords="390,170,20" href="https://pt.wikipedia.org/wiki/Piau%C3%AD" target="_blank">
+        <area shape="circle" coords="430,135,20" href="https://pt.wikipedia.org/wiki/Cear%C3%A1" target="_blank">
+        <area shape="circle" coords="470,147,10" href="https://pt.wikipedia.org/wiki/Rio_Grande_do_Norte" target="_blank">
+        <area shape="circle" coords="445,180,10" href="https://pt.wikipedia.org/wiki/Pernambuco" target="_blank">
+        <area shape="circle" coords="465,198,10" href="https://pt.wikipedia.org/wiki/Alagoas" target="_blank">
+        <area shape="circle" coords="455,210,20" href="https://pt.wikipedia.org/wiki/Sergipe" target="_blank"> 
+        <area shape="circle" coords="265,135,20" href="https://pt.wikipedia.org/wiki/Par%C3%A1" target="_blank"> 
+        <area shape="circle" coords="410,325,20" href="https://pt.wikipedia.org/wiki/Esp%C3%ADrito_Santo_(estado)" target="_blank">
+        <area shape="circle" coords="475,168,10" href="https://pt.wikipedia.org/wiki/Para%C3%ADba" target="_blank"> 
+    </map>
+
+    <img src="boneco.gif" id="boneco" class="boneco">
+    <img src="mapa_brasil.jpg" id="mapa" class="mapa" usemap="#meu_mapa">
+</body>
+    <script>
+        function aparecer(estado)
+        {
+            if(estado == "Rio")
+            {
+                texto_rio.style.display = "flex";
+            }
+            if(estado == "SC")
+            {
+                texto_santa.style.display = "flex";
+            }
+        }
+        function esconder()
+        {
+            texto_rio.style.display = "none";
+            texto_santa.style.display = "none";
+        }
+    </script>
+
+</html>
